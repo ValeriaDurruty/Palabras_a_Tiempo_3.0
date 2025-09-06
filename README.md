@@ -72,7 +72,7 @@ Las contribuciones son bienvenidas. Si deseas mejorar el juego, puedes:
 ## 🌐 Demo en línea
 
 Puedes jugar directamente aquí:  
-👉 [Palabras a Tiempo 3.0](https://tu-enlace-deploy.com)
+👉 [Palabras a Tiempo 3.0](https://palabrasatiempo.netlify.app/)
 
 ---
 
