@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabras a Tiempo 3.0</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Palabras a Tiempo 3.0</h1>
+        
+        <!-- Pantalla de instrucciones -->
+        <div id="instructionsScreen" class="screen active">
+            <h2>Instrucciones del Juego</h2>
+            <div class="instructions-content">
+                <p>Bienvenido a Palabras a Tiempo 3.0. El juego consiste en decir palabras que coincidan con una categoría y que empiecen con la letra que se muestra.</p>
+                
+                <h3>¿Cómo se juega?</h3>
+                <ul>
+                    <li>Selecciona la cantidad de jugadores y sus nombres.</li>
+                    <li>Establece la cantidad de puntos necesarios para ganar.</li>
+                    <li>Cada turno, se mostrará una categoría y una letra.</li>
+                    <li>El jugador en turno debe decir una palabra que corresponda a la categoría y que empiece con la letra mostrada.</li>
+                    <li>Si acierta, presiona el botón "Palabra Correcta" y suma un punto.</li>
+                    <li>Si no acierta o se acaba el tiempo (10 segundos), pierde el turno.</li>
+                    <li>Si un jugador considera que la palabra dicha es incorrecta, puede presionar el botón "Palabra Incorrecta".</li>
+                    <li>El juego termina cuando un jugador alcanza la cantidad de puntos establecida.</li>
+                </ul>
+                
+                <h3>Reglas adicionales</h3>
+                <ul>
+                    <li>Las letras no se repiten durante una ronda.</li>
+                    <li>Cuando se usan todas las letras del abecedario, la ronda termina y se cambia de categoría.</li>
+                    <li>¡Divertirse es la regla más importante!</li>
+                </ul>
+            </div>
+            <div class="button-container">
+                <button id="startButton">Comenzar</button>
+            </div>
+        </div>
+        
+        <!-- Pantalla de configuración inicial -->
+        <div id="setupScreen" class="screen">
+            <h2>Configuración del Juego</h2>
+            <div class="form-group">
+                <label for="playerCount">Número de jugadores:</label>
+                <input type="number" id="playerCount" min="2" value="2">
+                <div id="playerCountError" class="error"></div>
+            </div>
+            
+            <div id="playerNames"></div>
+            
+            <div class="form-group">
+                <label for="pointsToWin">Puntos para ganar:</label>
+                <input type="number" id="pointsToWin" min="1" value="5">
+                <div id="pointsError" class="error"></div>
+            </div>
+            
+            <div class="button-container">
+                <button id="startGame">Comenzar juego</button>
+                <button id="backToInstructions">Volver a instrucciones</button>
+            </div>
+        </div>
+        
+        <!-- Pantalla de juego -->
+        <div id="gameScreen" class="screen">
+            <div class="theme-display" id="currentTheme"></div>
+            <div class="letter-display" id="currentLetter"></div>
+            <div class="timer" id="timer">10</div>
+            <div class="player-turn" id="currentPlayer"></div>
+            
+            <div class="action-buttons">
+                <button id="correctBtn">Palabra Correcta</button>
+                <button id="incorrectBtn">Palabra Incorrecta</button>
+            </div>
+            
+            <div class="scoreboard">
+                <h3>Puntuación</h3>
+                <div id="scoreList"></div>
+            </div>
+            
+            <button id="backToSetup" class="back-button">Volver a Configuración</button>
+        </div>
+        
+        <!-- Pantalla de resultados -->
+        <div id="resultScreen" class="screen">
+            <h2>Resultado Final</h2>
+            <div class="winner" id="winnerMessage"></div>
+            <div class="scoreboard">
+                <h3>Puntuación Final</h3>
+                <div id="finalScoreList"></div>
+            </div>
+            <div class="button-container">
+                <button id="playAgain">Jugar de nuevo</button>
+                <button id="backToSetupFromResults" class="back-button">Volver a configuración</button>
+            </div>
+        </div>
+        
+        <!-- Modal para ronda completada -->
+        <div id="roundCompleteModal" class="modal">
+            <div class="modal-content">
+                <h2>¡Ronda Completada!</h2>
+                <p>Se han usado todas las letras del abecedario.</p>
+                <button id="continueButton">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/scripts/game.js"></script>
+</body>
+</html>
